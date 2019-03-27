@@ -36,3 +36,18 @@ population_chart <- ggplot(population_tidy_scotland, aes(x=year, y=value, group 
 # view the chart                  
 population_chart
 
+# alternative with styling
+
+library(scales)
+population_chart_styled <- ggplot(population_tidy_scotland, aes(x=year, y=value, group = Reference.Area)) + 
+                              geom_line(size = 1, aes(color=value)) +
+                              geom_point(size = 3, aes(color = value)) +
+                              theme_bw() +
+                              scale_y_continuous(labels = comma) +
+                              scale_colour_gradient(labels = comma, low ="yellow", high ="blue") +
+                              labs(color = "Population", title="Estimated Population in Scotland", subtitle = "Data source: statistics.gov.scot", x = "Year", y = "Number of People") +
+                              geom_label(aes(label = comma(value)), 
+                                        data = tail(population_tidy_scotland,1),
+                                        nudge_x = -1)
+
+population_chart_styled
