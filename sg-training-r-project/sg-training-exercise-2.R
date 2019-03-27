@@ -5,7 +5,7 @@
 library(tidyverse)
 library(ggplot2)
 
-# as before bring in the data
+# as with the previous exercise,  bring in the data
 
 housing_pop <- read.csv("data/exercise_2_data_1.csv", stringsAsFactors = F)
 
@@ -18,10 +18,11 @@ housing_pop_clean <- housing_pop %>%
                 
 # now we draw a scatterplot - notice we aren't using tidy data now -
 # to draw a scatterplot we need two columns - data should be as wide as it needs to be, no wider
-scatterplot <-ggplot(housing_pop_tidy, aes(x=population, y = dwellings)) +
+scatterplot <-ggplot(housing_pop_clean, aes(x=population, y = dwellings)) +
                 geom_point()
 
 scatterplot
+
 
 
 
