@@ -1,7 +1,7 @@
 # Exercise 2 - 2 datasets from a datacart and scatter
 
 # trying tidyverse - there's an alternative exercise without it
-
+# install.packages("tidyverse")
 library(tidyverse)
 library(ggplot2)
 
