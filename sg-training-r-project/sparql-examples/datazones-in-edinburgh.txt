@@ -1,0 +1,10 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT *
+WHERE {
+
+ ?dz <http://publishmydata.com/def/ontology/foi/within> <http://statistics.gov.scot/id/statistical-geography/S12000036> ;
+     <http://publishmydata.com/def/ontology/foi/memberOf> <http://statistics.gov.scot/def/foi/collection/data-zones-2011> ;
+     <http://statistics.data.gov.uk/def/statistical-geography#officialname> ?name
+
+} order by ?name

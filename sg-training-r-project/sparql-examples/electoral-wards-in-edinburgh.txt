@@ -1,0 +1,9 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT *
+WHERE {
+ ?ward <http://statistics.data.gov.uk/def/statistical-entity#code> <http://statistics.gov.scot/id/statistical-entity/S13> .
+ ?ward <http://publishmydata.com/def/ontology/foi/within> <http://statistics.gov.scot/id/statistical-geography/S12000036> .
+ ?ward <http://statistics.data.gov.uk/def/statistical-geography#status> "Live" .
+ ?ward rdfs:label ?label
+} order by ?label
