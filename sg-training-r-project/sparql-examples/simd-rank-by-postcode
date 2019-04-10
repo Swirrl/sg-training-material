@@ -1,0 +1,13 @@
+SELECT ?pc ?dz ?rank
+WHERE {
+  VALUES ?pc { <http://statistics.gov.scot/id/postcodeunit/EH12QP>
+               <http://statistics.gov.scot/id/postcodeunit/FK77WT> }
+  ?pc <http://statistics.gov.scot/def/postcode/dataZone2011> ?dz .
+  graph <http://statistics.gov.scot/graph/scottish-index-of-multiple-deprivation-2016> {
+     ?obs <http://statistics.gov.scot/def/dimension/simdDomain> <http://statistics.gov.scot/def/concept/simd-domain/simd> ;
+          <http://purl.org/linked-data/sdmx/2009/dimension#refArea> ?dz ;
+          <http://statistics.gov.scot/def/measure-properties/rank> ?rank .
+  }
+}
+
+LIMIT 100
